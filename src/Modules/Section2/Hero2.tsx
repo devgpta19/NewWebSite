@@ -1,5 +1,5 @@
 import React from 'react'
-import './Scss/hero2.scss'
+import './Scss/Hero2.scss';
 import TiltedImage2 from './TiltedImage2';
 import ManagePortfolio from './ManagePortfolio';
 import Ideate from './Ideate';
