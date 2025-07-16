@@ -1,0 +1,308 @@
+@use '../../../Scss/variable' as v;
+@use '../../../Scss/mixins' as m;
+
+
+*{
+    @include m.m0p0;
+}
+
+.colab {
+    height: 90vh;
+    width: 100%;
+
+    &__container {
+        height: 100%;
+        width: 100%;
+        @include m.flex-center;
+        flex-direction: column;
+        gap: v.$spacing-28;
+    }
+
+    &__title{
+        @include m.subtitle-font;
+        // font-size: v.$font-size-4xl;
+        font-weight: v.$font-weight-medium;
+        color: v.$text-primary;
+        text-align: center;
+        width: 100%;
+    }
+    &__subtitle{
+        @include m.subtitle-font;
+        // font-size: v.$font-size-4xl;
+        font-weight: v.$font-weight-medium;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+
+
+
+
+// AI NE LIKHA H PURA NEECHE WAALA SECTION
+
+.colab__logos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem 10rem;
+    max-width: 80rem;
+
+    @media (max-width: 1200px) {
+        gap: 2rem 6rem;
+        max-width: 100%;
+    }
+
+    @media (max-width: 1024px) {
+        gap: 1.5rem 4rem;
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem 2rem;
+    }
+
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+// Logo Item
+.colab__logo-item {
+    @include m.flex-center;
+}
+
+.colab__logo-container {
+    gap: 1rem;
+    @include m.flex-center;
+
+    @media (max-width: 768px) {
+        gap: 0.75rem;
+    }
+
+    @media (max-width: 480px) {
+        gap: 0.5rem;
+    }
+}
+
+.colab__logo-icon {
+    width: 2rem;
+    height: 2rem;
+    @include m.flex-center;
+
+    @media (max-width: 768px) {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    @media (max-width: 480px) {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+}
+
+.colab__logo-text {
+    @include m.subtitle-font;
+    color: v.$text-primary;
+    letter-spacing: 0.025em;
+    white-space: nowrap;
+    // @include responsive-text(1.25rem, 1rem, 0.75rem);
+
+    @media (max-width: 480px) {
+        letter-spacing: 0.01em;
+    }
+}
+
+// Specific Logo Styles
+.colab__logo-cursor {
+    background-color: v.$text-primary;
+    border-radius: 0.5rem;
+
+    &::before {
+        content: '';
+        width: 1.25rem;
+        height: 1.25rem;
+        background-color: v.$bg-primary;
+        border-radius: 0.125rem;
+
+        @media (max-width: 768px) {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        @media (max-width: 480px) {
+            width: 0.875rem;
+            height: 0.875rem;
+        }
+    }
+}
+
+.colab__logo-brex {
+    border: 2px solid v.$border-tertiary;
+    border-radius: 0.5rem;
+
+    &::before {
+        content: '';
+        width: 1rem;
+        height: 1rem;
+        background-color: v.$text-primary;
+        border-radius: 0.125rem;
+
+        @media (max-width: 768px) {
+            width: 0.875rem;
+            height: 0.875rem;
+        }
+
+        @media (max-width: 480px) {
+            width: 0.75rem;
+            height: 0.75rem;
+        }
+    }
+}
+
+.colab__logo-remote {
+    background-color: v.$text-primary;
+    border-radius: 50%;
+
+    &::before {
+        content: 'R';
+        color: v.$bg-primary;
+        font-weight: 700;
+        font-size: 1.125rem
+        // @include responsive-text(1.125rem, 1rem, 0.875rem);
+    }
+}
+
+.colab__logo-arc {
+    &::before {
+        content: '';
+        width: 2rem;
+        height: 2rem;
+        border: 2px solid v.$border-tertiary;
+        border-radius: 50%;
+        @include m.flex-center;
+
+        @media (max-width: 768px) {
+            width: 1.75rem;
+            height: 1.75rem;
+        }
+
+        @media (max-width: 480px) {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+
+    &::after {
+        content: '';
+        width: 0.75rem;
+        height: 0.75rem;
+        background-color: v.$text-primary;
+        border-radius: 50%;
+        position: absolute;
+
+        @media (max-width: 768px) {
+            width: 0.625rem;
+            height: 0.625rem;
+        }
+
+        @media (max-width: 480px) {
+            width: 0.5rem;
+            height: 0.5rem;
+        }
+    }
+}
+
+.colab__logo-runway {
+    background-color: v.$text-primary;
+    border-radius: 0.5rem;
+
+    &::before {
+        content: 'R';
+        color: v.$bg-primary;
+        font-weight: 700;
+        font-size: 1.125rem;
+        // @include responsive-text(1.125rem, 1rem, 0.875rem);
+    }
+}
+
+.colab__logo-descript {
+    &::before {
+        content: '';
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+
+        @media (max-width: 768px) {
+            gap: 0.2rem;
+        }
+
+        @media (max-width: 480px) {
+            gap: 0.15rem;
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+
+        @media (max-width: 768px) {
+            gap: 0.2rem;
+        }
+
+        @media (max-width: 480px) {
+            gap: 0.15rem;
+        }
+    }
+
+    .line-1 {
+        width: 1.75rem;
+        height: 0.125rem;
+        background-color: v.$text-primary;
+
+        @media (max-width: 768px) {
+            width: 1.5rem;
+            height: 0.1rem;
+        }
+
+        @media (max-width: 480px) {
+            width: 1.25rem;
+            height: 0.075rem;
+        }
+    }
+
+    .line-2 {
+        width: 1.25rem;
+        height: 0.125rem;
+        background-color: v.$text-primary;
+
+        @media (max-width: 768px) {
+            width: 1rem;
+            height: 0.1rem;
+        }
+
+        @media (max-width: 480px) {
+            width: 0.875rem;
+            height: 0.075rem;
+        }
+    }
+
+    .line-3 {
+        width: 1.5rem;
+        height: 0.125rem;
+        background-color: v.$text-primary;
+
+        @media (max-width: 768px) {
+            width: 1.25rem;
+            height: 0.1rem;
+        }
+
+        @media (max-width: 480px) {
+            width: 1rem;
+            height: 0.075rem;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+@use '../Scss/mixins' as m;
+@use '../Scss/variable' as v;
+
+.website-layout{
+    min-height: 100vh;
+    width: 100vw;
+    background-color: v.$bg-primary;
+}

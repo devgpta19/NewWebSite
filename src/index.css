@@ -1,0 +1,5 @@
+@use './Scss/mixins' as m;
+
+*{
+    @include m.m0p0;
+}

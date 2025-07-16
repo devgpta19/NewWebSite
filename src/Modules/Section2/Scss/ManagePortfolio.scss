@@ -1,0 +1,257 @@
+@use '../../../Scss/variable' as v;
+@use '../../../Scss/mixins' as m;
+
+* {
+    @include m.m0p0;
+}
+
+.manage-portfolio {
+
+    @include m.flex-center;
+    width: 100%;
+    height: 100%;
+    margin: v.$spacing-16 0;
+    // background-color: red;
+    
+    @media screen and (max-width: v.$screen-lg) {
+        height: 100vh;
+        width: 90vw;
+        // padding-right: v.$spacing-10;
+    }
+
+    &__container {
+        width: 1000px;
+        height: 500px;
+        @include m.flex-center;
+
+        @media screen and (max-width: v.$screen-lg) {
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            max-height: 100%;
+            max-width: 100%;
+            border-bottom: 1px solid v.$border-primary;
+            border-radius: 0;
+            // background: green;
+            margin: 0;
+        }
+        
+        &__content {
+            padding: v.$spacing-10 v.$spacing-9;
+            width: 100%;
+            height: 100%;
+            // background-color: green;
+            display: flex;
+            align-items: start;
+            justify-content: left;
+            text-align: left;
+            border: 1px solid v.$border-primary;
+            flex-direction: column;
+            
+            @media screen and (max-width: v.$screen-lg) {
+                height: 100%;
+                width: 100%;
+                // background: blue;
+            }
+
+
+            &__title {
+                color: v.$text-primary;
+                font-weight: v.$font-weight-light;
+                font-size: v.$font-size-lg;
+                margin-bottom: v.$spacing-2;
+            }
+
+            &__description {
+                @include m.subtitle-font;
+                font-size: v.$font-size-md;
+                font-weight: v.$font-weight-light;
+
+                .break{
+                    
+                    display: none;
+
+                    @media screen and (max-width: 900px) {
+                        display: inline;
+                    }
+                    @media screen and (max-width: 530px) {
+                        display: none;
+                    }
+                }
+
+            }
+
+            &__Portfolio {
+                width: 100%;
+                height: 100%;
+                margin-top: v.$spacing-8;
+                border-radius: 10px;
+                border: 1px solid v.$border-primary;
+                border-right: none;
+                padding: v.$spacing-1;
+                
+                @media screen and (max-width: v.$screen-lg) {
+                    // width: 500px;
+                    // height: 400px;
+                    // max-height: 100%;
+                    // max-width: 100%;
+                    // border: none;
+                    
+                    @include m.flex-center;
+                }
+
+                &__card {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                    border: 1px solid v.$border-secondary;
+                    border-right: none;
+                    border-bottom: none;
+                    background: linear-gradient(145deg, #151515, #00000027, #00000016, #00000000);
+
+                    @media screen and (max-width: v.$screen-xl) {
+                        // max-width: 800px;
+                        // height: 600px;
+                        height: 100%;
+                        width: 100%;
+                        border: none;
+                    }
+                }
+            }
+
+
+
+
+
+
+            &__ThreeCards {
+
+                // background: red;
+                width: 100%;
+                height: 100%;
+                margin-top: v.$spacing-8;
+                position: relative;
+                perspective: 1000px; // Important for 3D depth
+
+                
+                &__card {
+                    @include m.flex-center;
+                    height: 120px;
+                    width: 100%;
+                    background-color: v.$card-bg;
+                    // @include m.blurEffext(blur(50px), blur(50px));
+                    border-radius: 15px;
+                    border: 1px solid v.$border-secondary;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    margin-left: v.$spacing-1 ;
+                    // box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+                    transform-style: preserve-3d;
+                    transition: transform 0.4s ease-out;
+                    transform: rotateY(30deg);
+                    
+                    
+                    &__content {
+                        height: 100%;
+                        width: 100%;
+                        padding: v.$spacing-4;
+                        @include m.flex-center;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: start;
+                        text-align: left;
+                        gap: v.$spacing-2;
+                        
+                        .i{
+                            display: flex;
+                            gap: v.$spacing-4;
+                            color: v.$accent-green;
+                            span{
+                                font-size: v.$font-size-lg;
+                                font-weight: v.$font-weight-light;
+                            }
+                        }
+                        
+                        p {
+                            color: v.$text-primary;
+                            font-size: v.$font-size-md;
+                        }
+                        
+                        .date{
+                            @include m.subtitle-font;
+                            font-size: v.$font-size-base;
+                        }
+                    }
+                }
+
+                .card1 {
+                    bottom: 100px;
+                    z-index: 5;
+                    transform: rotateY(40deg) rotateX(5deg) translateY(-20px) scale(1) skewX(-4deg);
+                    // opacity: 0.3;
+                    opacity: 1;
+                    margin-left: v.$spacing-1 ;
+                    backdrop-filter: blur(10px);
+                    
+                    @media screen and (max-width: v.$screen-lg) {
+                        transform: rotateY(40deg) rotateX(5deg) translate(50px, -110px) scale(1) skewX(-4deg);
+                        
+                    }
+                }
+                
+                .card2 {
+                    bottom: 60px;
+                    z-index: 7;
+                    transform: rotateY(40deg) rotateX(5deg) translateY(-20px) scale(1) skewX(-4deg);
+                    opacity: 1;
+                    margin-left: v.$spacing-8 ;
+                    backdrop-filter: blur(50px);
+                    
+                    @media screen and (max-width: v.$screen-lg) {
+                        transform: rotateY(40deg) rotateX(5deg) translate(50px, -110px) scale(1) skewX(-4deg);
+                        
+                    }
+                }
+
+                .card3 {
+                    bottom: 20px;
+                    z-index: 9;
+                    transform: rotateY(40deg) rotateX(5deg) translateY(-20px) scale(1) skewX(-4deg);
+                    opacity: 1;
+                    margin-left: v.$spacing-16 ;
+                    
+                    @media screen and (max-width: v.$screen-lg) {
+                        transform: rotateY(40deg) rotateX(5deg) translate(50px, -110px) scale(1) skewX(-4deg);
+                    }
+                }
+                &__card:hover {
+                    transform: rotateY(40deg) rotateX(5deg) translateY(-12px) skewX(-4deg);
+                    background-color: v.$border-primary;
+                    opacity: 1;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .content1 {
+            border-left: none;
+            padding-left: 0;
+            
+            @media screen and (max-width: v.$screen-lg) {
+                border-right: none;
+                padding-right: 0;
+            }
+        }
+        
+        .content2 {
+            border-right: none;
+            padding-right: 0;
+
+            @media screen and (max-width: v.$screen-lg) {
+                border-left: none;
+                padding-left: 0;
+            }
+        }
+    }
+}

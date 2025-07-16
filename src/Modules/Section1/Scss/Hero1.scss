@@ -1,0 +1,81 @@
+@use '../../../Scss/variable' as v;
+@use '../../../Scss/mixins' as m;
+
+* {
+    @include m.m0p0;
+}
+
+.hero1 {
+    
+    @include m.hero-H-W;
+
+    &__container {
+        height: 100%;
+        width: 100%;
+        // background: green;
+    }
+
+    &__content {
+        width: 100%;
+        @include m.flex-center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // background: blue;
+        
+        &__container {
+            width: 1000px;
+            @include m.flex-center;
+            flex-direction: column;
+            align-items: flex-start;   
+            // background-color: red
+        }
+    }
+
+    &__title {
+        @include m.title-font;
+        letter-spacing: -0.025em;
+        line-height: 1.1;
+        margin-bottom: v.$spacing-8;
+        display: block;
+
+        &__span {
+            // display: inline-block;
+            gap: v.$spacing-3;
+        }
+
+        .line-break {
+
+            @media screen and (max-width: v.$screen-2xl) {
+                display: none;
+            }
+        }
+    }
+
+    &__description {
+        @include m.subtitle-font;
+        margin-bottom: v.$spacing-12;
+    }
+
+    &__buttons {
+        @include m.flex-center;
+        justify-content: left;
+        gap: v.$spacing-8;
+        margin-bottom: v.$spacing-12;
+
+        &__primary {
+            @include m.btn_primary;
+            padding: v.$spacing-3 v.$spacing-5;
+            font-weight: v.$font-weight-medium;
+            font-size: v.$font-size-sm;
+        }
+
+        &__ghost {
+            @include m.btn_ghost;
+            padding: v.$spacing-3 v.$spacing-5;
+            font-weight: v.$font-weight-medium;
+            font-size: v.$font-size-sm;
+        }
+    }
+
+}

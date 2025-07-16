@@ -1,0 +1,73 @@
+@use '../Scss/variable' as v;
+@use '../Scss/mixins' as m;
+
+* {
+    @include m.m0p0;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: #1d1d1d08;
+    // @include m.flex-center;
+    @include m.blurEffext(blur(50px), blur(50px));
+    border-bottom: 1px solid #1c1d1d;
+    height: 65px;
+    font-family: v.$font-interVariable;
+    font-weight: v.$font-weight-medium;
+    @include m.flex-center;
+    padding: 0 v.$spacing-10;
+
+    &__container {
+        height: 100%;
+        width: 1000px;
+        @include m.flex-center;
+        justify-content: space-between;
+        color: v.$text-primary;
+    }
+
+    &__logo {
+
+        &__content {
+            @include m.flex-center;
+            gap: v.$spacing-3;
+        }
+    }
+
+    &__logoicon {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: v.$text-tertiary;
+    }
+
+    &__nav {
+        @include m.flex-center;
+        gap: v.$spacing-3;
+        
+        .nav-link {
+            @include m.btn_ghost;
+        }
+    }
+
+    &__actions{
+        @include m.flex-center;
+        gap: v.$spacing-2;
+
+        .btn{
+            @include m.common_button;
+
+            &__ghost{
+                @include m.btn_ghost;
+            }
+
+            &__primary{
+                @include m.btn_primary;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,113 @@
+@use './variable' as v;
+
+@mixin m0p0 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: v.$font-interVariable;
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin title-font {
+    font-family: v.$font-interVariable;
+    color: v.$text-primary;
+    font-weight: v.$font-weight-medium;
+    font-size: v.$font-size-6xl;
+    // font-size: clamp(v.$font-size-6xl, 3vw, v.$font-size-8xl);
+    //               3vw (which is 3% of the viewport width)
+    //               If 3vw is less than 4xl, it uses 4xl.
+    //               If 3vw is between 4xl and 5xl, it uses the calculated 3vw.
+    //               If 3vw is greater than 5xl, it uses 5xl.
+}
+
+@mixin subtitle-font {
+    font-family: v.$font-interVariable;
+    color: v.$text-secondary;
+    font-weight: v.$font-weight-semi-bold;
+    font-size: clamp(v.$font-size-lg, 1vw, v.$font-size-base);
+}
+
+@mixin bg_Gradient {
+    background: linear-gradient(to bottom, v.$bg-gradient, v.$bg-primary);
+}
+
+@mixin blurEffext($blur, $backdrop) {
+    backdrop-filter: $blur;
+    -webkit-backdrop-filter: $backdrop;
+}
+
+@mixin common_button {
+    padding: v.$spacing-2;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+@mixin btn_ghost {
+    font-family: v.$font-interVariable;
+    background-color: transparent;
+    font-size: v.$font-size-xs;
+    color: v.$text-secondary;
+    text-decoration: none;
+    padding: v.$spacing-2 v.$spacing-4;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: v.$text-primary;
+        border: v.$border-primary;
+        background-color: v.$bg-elevated;
+        cursor: pointer;
+    }
+}
+
+@mixin btn_primary {
+    font-family: v.$font-interVariable;
+    background-color: v.$text-primary;
+    color: v.$bg-primary;
+    font-size: v.$font-size-sm;
+    text-decoration: none;
+    padding: v.$spacing-2 v.$spacing-4;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: v.$text-hover;
+        cursor: pointer;
+    }
+}
+
+
+@mixin scroll-x-axis {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+@mixin hero-H-W {
+    min-height: 100%;
+    width: 100%;
+    padding: v.$spacing-36 v.$spacing-10;
+}
+
+@mixin horizontal-Line {
+    @include flex-center;
+    width: 1000px;
+    background-color: red;
+    &__child{
+    height: 550px;
+    width: 50%;
+    border: 1px solid v.$border-primary;
+    // background-color: v.$border-primary;
+    margin: v.$spacing-12 0;
+    }
+}

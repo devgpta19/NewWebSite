@@ -1,0 +1,212 @@
+@use '../../../Scss/variable' as v;
+@use '../../../Scss/mixins' as m;
+
+
+* {
+    @include m.m0p0;
+}
+
+.three-features {
+    height: 100%;
+    width: 100%;
+    padding: v.$spacing-16 0;
+    overflow: hidden;
+
+
+    &__container {
+        @include m.flex-center;
+        flex-direction: column;
+        gap: v.$spacing-16;
+        // background-color: green;
+    }
+
+    &__header {
+        // @include m.flex-center;
+        // flex-direction: column;
+        // padding: 0 calc(2*v.$spacing-28);
+
+
+        display: flex;
+        // background-color: purple;
+        justify-content: right;
+        padding: 0;
+
+
+        &__content {
+            // @include m.flex-center;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            // background-color: yellow;
+            gap: v.$spacing-8;
+
+            max-width: 1000px;
+
+            @media screen and (max-width: v.$screen-lg) {
+                display: flex;
+                flex-direction: column;
+                justify-content: left;
+            }
+
+            &__title {
+                width: 60%;
+                // background-color: green;
+                padding-top: v.$spacing-4;
+                // height: 100%;
+
+                
+                @media screen and (max-width: v.$screen-lg) {
+                    width: 100%;
+                    // background-color: green;
+                }
+                
+                &__title {
+                    
+                    height: 100%;
+                    width: 100%;
+                    @include m.title-font;
+                    // background: red;
+                    letter-spacing: -0.025em;
+                    line-height: 1.1;
+                    margin-bottom: v.$spacing-8;
+                    display: block;
+            
+                    &__span {
+                        // display: inline-block;
+                        gap: v.$spacing-3;
+                    }
+            
+                    .line-break {
+            
+                        @media screen and (max-width: v.$screen-2xl) {
+                            display: none;
+                        }
+                    }
+                }
+
+                @media screen and (max-width: v.$screen-lg) {
+                    // background-color: red;
+                }
+
+            }
+
+            &__subtitle {
+                @include m.subtitle-font;
+                text-align: justify;
+                width: 40%;
+
+                // background-color: blue;
+
+                .last-words{
+                    color: v.$text-primary;
+                    font-size: v.$font-size-lg;
+
+                    a{
+                        text-decoration: none;
+                        // display: flex;
+                        align-items: center;
+                        gap: v.$spacing-2;
+                        cursor: pointer;
+                        font-weight: v.$font-weight-bold;
+                        color: v.$text-primary;
+                        transition: all 0.3s ease;
+
+                        &:hover{
+                            color: v.$text-hover;
+                        }
+                        
+                    }
+
+                    &__icon{
+                        // font-size: v.$font-size-xl;
+                    }
+
+                }
+                
+                @media screen and (max-width: v.$screen-lg) {
+                    text-align: left;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+
+    &__content {
+        // @include m.flex-center;
+
+        &__item {
+            @include m.flex-center;
+            flex-direction: row;
+            gap: v.$spacing-2;
+            overflow-x: scroll;
+            // overscroll-behavior-x: contain;
+            // scroll-behavior: smooth;
+            // white-space: wrap;
+            // scroll-snap-type: x mandatory;
+
+            // @include m.scroll-x-axis;
+
+            &__card {
+                @include m.flex-center;
+                flex-direction: column;
+                gap: v.$spacing-12;
+                border: 1px solid v.$border-primary;
+                border-radius: v.$spacing-4;
+                // scroll-snap-align: start;
+                overflow: hidden;
+                background-color: v.$card-bg;
+                height: 350px;
+                width: 325px;
+                position: relative;
+
+                img {
+                    width: 100%;
+                    height: 70%;
+                    object-fit: cover;
+                    background-size: contain;
+                    background-color: transparent
+                }
+
+                &__title {
+                    @include m.subtitle-font;
+                    @include m.flex-center;
+                    justify-content: space-between;
+                    padding: v.$spacing-1;
+                    gap: v.$spacing-4;
+                    background-color: v.$card-bg;
+                    padding: v.$spacing-4;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+
+                    h3 {
+                        color: v.$text-primary;
+                        font-size: v.$font-size-lg;
+                    }
+
+                    button {
+                        height: 5px;
+                        width: 5px;
+                        color: v.$text-secondary;
+                        font-size: v.$font-size-xl;
+                        font-weight: v.$font-weight-light;
+                        background-color: v.$bg-primary;
+                        border: 1px solid v.$border-primary;
+                        border-radius: 50%;
+                        padding: v.$spacing-4;
+                        cursor: pointer;
+
+                        @include m.flex-center;
+                    }
+                }
+            }
+
+            @media screen and (max-width: v.$screen-lg) {
+                // flex-direction: column;
+                margin-left: 1rem;
+            }
+        }
+    }
+}
