@@ -58,7 +58,7 @@
     font-size: v.$font-size-xs;
     color: v.$text-secondary;
     text-decoration: none;
-    padding: v.$spacing-2 v.$spacing-4;
+    padding: v.$spacing-2 v.$spacing-3;
     border-radius: 10px;
     transition: all 0.3s ease;
 
@@ -75,8 +75,9 @@
     background-color: v.$text-primary;
     color: v.$bg-primary;
     font-size: v.$font-size-sm;
+    font-weight: v.$font-weight-medium;
     text-decoration: none;
-    padding: v.$spacing-2 v.$spacing-4;
+    padding: v.$spacing-2 v.$spacing-3;
     border-radius: 10px;
     transition: all 0.3s ease;
 

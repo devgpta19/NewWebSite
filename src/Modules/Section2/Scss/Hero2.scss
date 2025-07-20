@@ -7,21 +7,16 @@
 
 .hero2 {
     
-    @include m.hero-H-W;
+    
     min-height: 100vh;
     width: 100%;
-    background-color: paleturquoise;
     background: linear-gradient(180deg, #141516, #08090a);    
-    // background: green;
+    
+    @include m.hero-H-W;
     
     &__container {
         min-height: 100vh;
-        width: 100%;
-        // background: yellow;
-        // @include m.flex-center;
-        // flex-direction: column;
-        
-        
+        width: 100%;        
     }
 
     &__content {

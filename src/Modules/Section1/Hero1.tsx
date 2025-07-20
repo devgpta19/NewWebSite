@@ -53,7 +53,7 @@ const Hero1: React.FC = () => {
                         </p>
                         <div className='hero1__buttons'>
                             <a className='hero1__buttons__primary'>Track Your Trades</a>
-                            <a className='hero1__buttons__ghost'><span>Analyse your trades with AI</span> <span>→</span></a>
+                            <a className='hero1__buttons__ghost'><span className='hero1__buttons__ghost__text'>Analyse your trades with AI</span> <span className='hero1__buttons__ghost__arrow'>→</span></a>
                         </div>
                     </div>
                 </div>

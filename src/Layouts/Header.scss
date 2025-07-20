@@ -12,62 +12,138 @@
     right: 0;
     z-index: 100;
     background: #1d1d1d08;
-    // @include m.flex-center;
     @include m.blurEffext(blur(50px), blur(50px));
-    border-bottom: 1px solid #1c1d1d;
+    border-bottom: 1px solid v.$border-primary;
     height: 65px;
+    width: 100%;
     font-family: v.$font-interVariable;
     font-weight: v.$font-weight-medium;
     @include m.flex-center;
     padding: 0 v.$spacing-10;
-
+    @media screen and (max-width:v.$screen-lg) {
+        padding: 0 v.$spacing-1;
+    }
     &__container {
         height: 100%;
         width: 1000px;
         @include m.flex-center;
         justify-content: space-between;
         color: v.$text-primary;
-    }
-
-    &__logo {
-
-        &__content {
+        @media screen and (max-width:v.$screen-lg) {
+            width: 100%;
+        }
+        &__logo {
+            &__content {
+                @include m.flex-center;
+                gap: v.$spacing-3;
+                &__logoicon {
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    background-color: v.$text-tertiary;
+                }
+            }
+        }
+        &__nav {
             @include m.flex-center;
             gap: v.$spacing-3;
-        }
-    }
-
-    &__logoicon {
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        background-color: v.$text-tertiary;
-    }
-
-    &__nav {
-        @include m.flex-center;
-        gap: v.$spacing-3;
-        
-        .nav-link {
-            @include m.btn_ghost;
-        }
-    }
-
-    &__actions{
-        @include m.flex-center;
-        gap: v.$spacing-2;
-
-        .btn{
-            @include m.common_button;
-
-            &__ghost{
+            @media screen and (max-width: v.$screen-lg) {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #000000fe;
+                @include m.blurEffext(blur(20px), blur(20px));
+                // flex-direction: column;
+                padding: 1rem;
+                gap: 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                &--mobile {
+                    transform: translateY(0);
+                    opacity: 1;
+                    visibility: visible;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: start;
+                    gap: v.$spacing-6;
+                }
+            }
+            .nav-link {
                 @include m.btn_ghost;
-            }
-
-            &__primary{
-                @include m.btn_primary;
+                text-decoration: none;
+                @media screen and (max-width: v.$screen-lg) {
+                    display: flex;
+                    justify-content: center;
+                    align-items: start;
+                    flex-direction: column;
+                    gap: v.$spacing-10;
+                    text-align: center;
+                    width: 100%;
+                    border-radius: 0;
+                    border: none;
+                    border-bottom: 1px solid v.$border-primary;
+                    font-size: v.$font-size-xl;
+                }
             }
         }
-
+        &__actions {
+            @media screen and (max-width: v.$screen-lg) {
+                display: flex;
+                flex-direction: row;
+                gap: v.$spacing-3;
+                justify-content: end;
+                align-items: center;
+            }
+            &__btns {
+                @include m.flex-center;
+                gap: v.$spacing-1;
+                .btn {
+                    @include m.common_button;
+                    &__ghost {
+                        @include m.btn_ghost;
+                    }
+                    &__primary {
+                        @include m.btn_primary;
+                    }
+                }
+            }
+            .mobile-menu-btn {
+                display: none;
+                @media screen and (max-width: v.$screen-lg) {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    padding: 0.5rem;
+                    border-radius: 0.25rem;
+                    transition: background 0.2s ease;
+                    &:hover {
+                        @include m.btn_ghost;
+                        color: v.$text-primary;
+                        padding: v.$spacing-3 v.$spacing-3;
+                    }
+                }
+                span {
+                    width: 20px;
+                    height: 2px;
+                    background: v.$text-primary;
+                    transition: all 0.3s ease;
+                }
+                &.active {
+                    span:nth-child(1) {
+                        transform: rotate(45deg) translate(5px, 3px);
+                    }
+                    span:nth-child(2) {
+                        transform: rotate(-45deg) translate(5px, -3px);
+                    }
+                }
+            }
+        }
     }
 }

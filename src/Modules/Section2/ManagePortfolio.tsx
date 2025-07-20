@@ -33,7 +33,7 @@ const ManagePortfolio: React.FC = () => {
           <p className='manage-portfolio__container__content__description'>Consolidate specs, milestones, tasks, and other <span className='break'><br /></span> documentation in one centralized location.</p>
           <div className='manage-portfolio__container__content__Portfolio'>
             <div className='manage-portfolio__container__content__Portfolio__card'>
-
+              
             </div>
           </div>
         </div>
