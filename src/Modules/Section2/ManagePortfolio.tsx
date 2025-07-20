@@ -2,26 +2,26 @@ import React from 'react'
 import './Scss/ManagePortfolio.scss';
 
 
-const portfolioCards = [
-  {
-    statusCount: 0,
-    statusLabel: 'On Track',
-    message: 'We are ready to launch next Thursday',
-    date: 'Sept 8',
-  },
-  {
-    statusCount: 0,
-    statusLabel: 'On Track',
-    message: 'We are ready to launch next Thursday',
-    date: 'Sept 8',
-  },
-  {
-    statusCount: 0,
-    statusLabel: 'On Track',
-    message: 'We are ready to launch next Thursday',
-    date: 'Sept 8',
-  },
-]
+// const portfolioCards = [
+//   {
+//     statusCount: 0,
+//     statusLabel: 'On Track',
+//     message: 'We are ready to launch next Thursday',
+//     date: 'Sept 8',
+//   },
+//   {
+//     statusCount: 0,
+//     statusLabel: 'On Track',
+//     message: 'We are ready to launch next Thursday',
+//     date: 'Sept 8',
+//   },
+//   {
+//     statusCount: 0,
+//     statusLabel: 'On Track',
+//     message: 'We are ready to launch next Thursday',
+//     date: 'Sept 8',
+//   },
+// ]
 
 
 const ManagePortfolio: React.FC = () => {
