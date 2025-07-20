@@ -36,7 +36,7 @@ const Hero2: React.FC = () => {
 
                 <ManagePortfolio />
 
-                <Ideate/>
+                <Ideate />
 
                 <FourQualities />
 

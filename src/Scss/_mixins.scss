@@ -21,9 +21,9 @@
 @mixin title-font {
     font-family: v.$font-interVariable;
     color: v.$text-primary;
-    font-weight: v.$font-weight-medium;
-    font-size: v.$font-size-6xl;
-    // font-size: clamp(v.$font-size-6xl, 3vw, v.$font-size-8xl);
+    font-weight: v.$font-weight-semi-bold;
+    font-size: v.$font-size-5xl;
+    // font-size: clamp(v.$font-size-5xl, 3vw, v.$font-size-8xl);
     //               3vw (which is 3% of the viewport width)
     //               If 3vw is less than 4xl, it uses 4xl.
     //               If 3vw is between 4xl and 5xl, it uses the calculated 3vw.
@@ -97,6 +97,9 @@
     min-height: 100%;
     width: 100%;
     padding: v.$spacing-36 v.$spacing-10;
+    @media screen and (max-width: v.$screen-md) {
+        padding: v.$spacing-20 v.$spacing-4;
+    }
 }
 
 @mixin horizontal-Line {

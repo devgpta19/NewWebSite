@@ -6,13 +6,12 @@
 }
 
 .hero1 {
-    
+
     @include m.hero-H-W;
 
     &__container {
         height: 100%;
         width: 100%;
-        // background: green;
     }
 
     &__content {
@@ -22,17 +21,24 @@
         justify-content: center;
         align-items: center;
         // background: blue;
-        
+
         &__container {
             width: 1000px;
             @include m.flex-center;
             flex-direction: column;
-            align-items: flex-start;   
-            // background-color: red
+            align-items: flex-start;
+
+            @media screen and (max-width: v.$screen-md) {
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                text-align: center;
+                gap: v.$spacing-4;
+            }
         }
     }
 
-    &__title {
+    &__title1 {
         @include m.title-font;
         letter-spacing: -0.025em;
         line-height: 1.1;
@@ -50,11 +56,48 @@
                 display: none;
             }
         }
+
+        @media screen and (max-width: v.$screen-md) {
+            display: none;
+        }
+    }
+
+    &__title2 {
+        @media screen and (min-width: v.$screen-md) {
+            display: none;
+        }
+
+        @media screen and (max-width: v.$screen-md) {
+            @include m.title-font;
+            letter-spacing: -0.025em;
+            line-height: 1.1;
+            margin-bottom: v.$spacing-4;
+            display: inline-block;
+
+            &__span {
+                gap: v.$spacing-3;
+            }
+        }
     }
 
     &__description {
         @include m.subtitle-font;
         margin-bottom: v.$spacing-12;
+
+        @media screen and (max-width: v.$screen-md) {
+            padding: 0 v.$spacing-4;
+            display: none;
+        }
+    }
+
+    &__description2 {
+        display: none;        
+        @include m.subtitle-font;
+        margin-bottom: v.$spacing-12;
+
+        @media screen and (max-width: v.$screen-md) {
+            display: inline-block;
+        }
     }
 
     &__buttons {
@@ -63,10 +106,16 @@
         gap: v.$spacing-8;
         margin-bottom: v.$spacing-12;
 
+        @media screen and (max-width: v.$screen-md) {
+            flex-direction: column;
+            gap: v.$spacing-4;
+        }
+
         &__primary {
             @include m.btn_primary;
+            font-weight: v.$font-weight-semi-bold;
             padding: v.$spacing-3 v.$spacing-5;
-            font-weight: v.$font-weight-medium;
+            // font-weight: v.$font-weight-medium;
             font-size: v.$font-size-sm;
         }
 
@@ -75,6 +124,12 @@
             padding: v.$spacing-3 v.$spacing-5;
             font-weight: v.$font-weight-medium;
             font-size: v.$font-size-sm;
+
+            background: linear-gradient(135deg, v.$text-primary, v.$text-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+
         }
     }
 

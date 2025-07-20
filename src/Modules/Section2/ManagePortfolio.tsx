@@ -49,7 +49,7 @@ const ManagePortfolio: React.FC = () => {
             documentation in one centralized location.
           </p>
 
-          <div className='manage-portfolio__container__content__ThreeCards'>
+          {/* <div className='manage-portfolio__container__content__ThreeCards'>
             {portfolioCards.map((card, index) => (
               <div
                 className={`manage-portfolio__container__content__ThreeCards__card card${index + 1}`}
@@ -65,7 +65,7 @@ const ManagePortfolio: React.FC = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

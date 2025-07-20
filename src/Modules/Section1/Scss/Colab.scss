@@ -2,36 +2,124 @@
 @use '../../../Scss/mixins' as m;
 
 
-*{
+* {
     @include m.m0p0;
 }
 
 .colab {
-    height: 90vh;
+    height: 100%;
     width: 100%;
+    // background: red;
+    @include m.flex-center;
+
+    padding: v.$spacing-10 0;
 
     &__container {
+        padding: v.$spacing-10 0;
         height: 100%;
-        width: 100%;
-        @include m.flex-center;
-        flex-direction: column;
-        gap: v.$spacing-28;
-    }
+        width: 1000px;
+        // background: green;
 
-    &__title{
-        @include m.subtitle-font;
-        // font-size: v.$font-size-4xl;
-        font-weight: v.$font-weight-medium;
-        color: v.$text-primary;
+        // overflow: hidden; // ----------------------------------------
+
         text-align: center;
-        width: 100%;
-    }
-    &__subtitle{
-        @include m.subtitle-font;
-        // font-size: v.$font-size-4xl;
-        font-weight: v.$font-weight-medium;
-        text-align: center;
-        width: 100%;
+        display: grid;
+        gap: v.$spacing-20;
+        // grid-template-rows: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+
+        @media screen and (max-width: v.$screen-lg) {
+            width: 100%;
+            padding: v.$spacing-10 0;
+            // background: blue;
+        }
+
+        &__content {
+
+            width: 100%;
+            // height: 100%;
+            // background: green;
+
+
+            &__title {
+
+                &.title {
+                    font-size: v.$font-size-xl;
+                    color: v.$text-primary;
+
+                    @media screen and (max-width: v.$screen-lg) {
+                        font-size: v.$font-size-base;
+                        color: v.$text-secondary;
+                    }
+                }
+                
+                &.subtitle {
+                    font-size: v.$font-size-xl;
+                    color: v.$text-secondary;
+                    
+                    @media screen and (max-width: v.$screen-lg) {
+                        font-size: v.$font-size-base;
+                        color: v.$text-secondary;
+                    }
+                }
+            }
+
+
+        }
+
+        &__logo-grid {
+
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media screen and (max-width: v.$screen-lg) {
+                display: unset;
+            }
+
+            &__logo-item {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: v.$spacing-16;
+                
+                // For lower resloutions then 1024px
+                
+                @media screen and (max-width: v.$screen-lg) {
+                    width: fit-content;
+                    display: flex;
+                    justify-content: start;
+                    align-items: start;
+                    gap: v.$spacing-20;
+                    white-space: nowrap;
+                    animation: scrollLogos 10s linear infinite;
+                    background: rgb(153, 205, 50);
+                }
+
+                @keyframes scrollLogos {
+                    from {
+                        transform: translateX(0%);
+                    }
+
+                    to {
+                        transform: translate(calc(-100% + (v.$spacing-20)*13.5));
+                    }
+                }
+
+                &__logo-container {
+
+                    // background: red;
+                    
+                    &__logo-icon {
+                        height: 100px;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -39,270 +127,130 @@
 
 
 
-// AI NE LIKHA H PURA NEECHE WAALA SECTION
 
-.colab__logos-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5rem 10rem;
-    max-width: 80rem;
 
-    @media (max-width: 1200px) {
-        gap: 2rem 6rem;
-        max-width: 100%;
-    }
 
-    @media (max-width: 1024px) {
-        gap: 1.5rem 4rem;
-    }
 
-    @media (max-width: 768px) {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem 2rem;
-    }
 
-    @media (max-width: 480px) {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-}
+
+
+
+
+// **********************************************************************************************************************
+
+// .colab {
+//     height: 100%;
+//     width: 100%;
+//     padding: v.$spacing-24 0;
+
+
+
+// &__container {
+
+//     background: red;
+//     height: 100%;
+//     width: 100%;
+//     display: grid;
+//     grid-template-rows: repeat(2, 1fr);
+
+//     // @include m.flex-center;
+//     // flex-direction: column;
+//     // gap: v.$spacing-28;
+//     // background: green;
+//     // overflow: hidden;
+
+//     &__content {
+//         height: max-content;
+//         background: green;
+//     }
+
+// }
+
+// &__title {
+//     @include m.subtitle-font;
+//     font-weight: v.$font-weight-medium;
+//     text-align: center;
+//     width: 100%;
+
+//     &.title {
+//         color: v.$text-primary;
+
+//         @media screen and (max-width: v.$screen-md) {
+//             font-size: v.$font-size-base;
+//             color: v.$text-secondary;
+//         }
+//     }
+
+//     &.subtitle {
+//         @include m.subtitle-font;
+//         font-weight: v.$font-weight-medium;
+//         text-align: center;
+//         width: 100%;
+
+//         @media screen and (max-width: v.$screen-md) {
+//             font-size: v.$font-size-sm;
+//             color: v.$text-secondary;
+//         }
+//     }
+// }
+
+// // Colab GRID k liye 
+// &__logos-grid {
+//     // @include m.flex-center;
+
+//     display: grid;
+//     grid-template-columns: repeat(2, 1fr);
+//     gap: 5rem 10rem;
+//     max-width: 1000px;
+//     height: 1000px;
+//     align-items: start;
+//     justify-content: start;
+
+//     // justify-content: left;
+//     background: red;
+
+
+
 
 // Logo Item
-.colab__logo-item {
-    @include m.flex-center;
-}
 
-.colab__logo-container {
-    gap: 1rem;
-    @include m.flex-center;
+// &__logo-item {
+//     display: grid;
+//     grid-template-columns: repeat(3, 1fr);
+//     gap: 5rem 10rem;
+//     max-width: 1000px;
+//     align-items: start;
+//     justify-content: start;
 
-    @media (max-width: 768px) {
-        gap: 0.75rem;
-    }
+//     @media screen and (max-width: v.$screen-lg) {
+//         display: flex;
+//         gap: 3rem;
+//         white-space: nowrap;
+//         overflow-x: scroll;
+//         animation: scrollLogos 10s linear infinite;
 
-    @media (max-width: 480px) {
-        gap: 0.5rem;
-    }
-}
+//         max-width: fit-content;
+//         // padding: 0 v.$spacing-20;
+//         // background: blue;
+//     }
 
-.colab__logo-icon {
-    width: 2rem;
-    height: 2rem;
-    @include m.flex-center;
+//     @keyframes scrollLogos {
 
-    @media (max-width: 768px) {
-        width: 2rem;
-        height: 2rem;
-    }
+//         from {
+//             transform: translateX(0%);
+//         }
 
-    @media (max-width: 480px) {
-        width: 1.75rem;
-        height: 1.75rem;
-    }
-}
+//         to {
+//             transform: translate(-100%);
+//         }
+//     }
+// }
+//     }
+// }
 
-.colab__logo-text {
-    @include m.subtitle-font;
-    color: v.$text-primary;
-    letter-spacing: 0.025em;
-    white-space: nowrap;
-    // @include responsive-text(1.25rem, 1rem, 0.75rem);
+// .logo-item-2 {
 
-    @media (max-width: 480px) {
-        letter-spacing: 0.01em;
-    }
-}
-
-// Specific Logo Styles
-.colab__logo-cursor {
-    background-color: v.$text-primary;
-    border-radius: 0.5rem;
-
-    &::before {
-        content: '';
-        width: 1.25rem;
-        height: 1.25rem;
-        background-color: v.$bg-primary;
-        border-radius: 0.125rem;
-
-        @media (max-width: 768px) {
-            width: 1rem;
-            height: 1rem;
-        }
-
-        @media (max-width: 480px) {
-            width: 0.875rem;
-            height: 0.875rem;
-        }
-    }
-}
-
-.colab__logo-brex {
-    border: 2px solid v.$border-tertiary;
-    border-radius: 0.5rem;
-
-    &::before {
-        content: '';
-        width: 1rem;
-        height: 1rem;
-        background-color: v.$text-primary;
-        border-radius: 0.125rem;
-
-        @media (max-width: 768px) {
-            width: 0.875rem;
-            height: 0.875rem;
-        }
-
-        @media (max-width: 480px) {
-            width: 0.75rem;
-            height: 0.75rem;
-        }
-    }
-}
-
-.colab__logo-remote {
-    background-color: v.$text-primary;
-    border-radius: 50%;
-
-    &::before {
-        content: 'R';
-        color: v.$bg-primary;
-        font-weight: 700;
-        font-size: 1.125rem
-        // @include responsive-text(1.125rem, 1rem, 0.875rem);
-    }
-}
-
-.colab__logo-arc {
-    &::before {
-        content: '';
-        width: 2rem;
-        height: 2rem;
-        border: 2px solid v.$border-tertiary;
-        border-radius: 50%;
-        @include m.flex-center;
-
-        @media (max-width: 768px) {
-            width: 1.75rem;
-            height: 1.75rem;
-        }
-
-        @media (max-width: 480px) {
-            width: 1.5rem;
-            height: 1.5rem;
-        }
-    }
-
-    &::after {
-        content: '';
-        width: 0.75rem;
-        height: 0.75rem;
-        background-color: v.$text-primary;
-        border-radius: 50%;
-        position: absolute;
-
-        @media (max-width: 768px) {
-            width: 0.625rem;
-            height: 0.625rem;
-        }
-
-        @media (max-width: 480px) {
-            width: 0.5rem;
-            height: 0.5rem;
-        }
-    }
-}
-
-.colab__logo-runway {
-    background-color: v.$text-primary;
-    border-radius: 0.5rem;
-
-    &::before {
-        content: 'R';
-        color: v.$bg-primary;
-        font-weight: 700;
-        font-size: 1.125rem;
-        // @include responsive-text(1.125rem, 1rem, 0.875rem);
-    }
-}
-
-.colab__logo-descript {
-    &::before {
-        content: '';
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
-
-        @media (max-width: 768px) {
-            gap: 0.2rem;
-        }
-
-        @media (max-width: 480px) {
-            gap: 0.15rem;
-        }
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
-
-        @media (max-width: 768px) {
-            gap: 0.2rem;
-        }
-
-        @media (max-width: 480px) {
-            gap: 0.15rem;
-        }
-    }
-
-    .line-1 {
-        width: 1.75rem;
-        height: 0.125rem;
-        background-color: v.$text-primary;
-
-        @media (max-width: 768px) {
-            width: 1.5rem;
-            height: 0.1rem;
-        }
-
-        @media (max-width: 480px) {
-            width: 1.25rem;
-            height: 0.075rem;
-        }
-    }
-
-    .line-2 {
-        width: 1.25rem;
-        height: 0.125rem;
-        background-color: v.$text-primary;
-
-        @media (max-width: 768px) {
-            width: 1rem;
-            height: 0.1rem;
-        }
-
-        @media (max-width: 480px) {
-            width: 0.875rem;
-            height: 0.075rem;
-        }
-    }
-
-    .line-3 {
-        width: 1.5rem;
-        height: 0.125rem;
-        background-color: v.$text-primary;
-
-        @media (max-width: 768px) {
-            width: 1.25rem;
-            height: 0.1rem;
-        }
-
-        @media (max-width: 480px) {
-            width: 1rem;
-            height: 0.075rem;
-        }
-    }
-}
+//     @media screen and (min-width: v.$screen-lg) {
+//         display: none;
+//     }
+// }

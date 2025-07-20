@@ -7,7 +7,7 @@ import Hero2 from '../Modules/Section2/Hero2';
 const WebsiteLayout: React.FC = () => {
   return (
     <div className='website-layout'>
-      <Header/>
+      {/* <Header/> */}
       <Hero1/>
       <Hero2/>
     </div>

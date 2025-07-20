@@ -10,14 +10,11 @@
     height: 100%;
     width: 100%;
     padding: v.$spacing-16 0;
-    overflow: hidden;
-
 
     &__container {
         @include m.flex-center;
         flex-direction: column;
         gap: v.$spacing-16;
-        // background-color: green;
     }
 
     &__header {
@@ -54,14 +51,14 @@
                 padding-top: v.$spacing-4;
                 // height: 100%;
 
-                
+
                 @media screen and (max-width: v.$screen-lg) {
                     width: 100%;
                     // background-color: green;
                 }
-                
+
                 &__title {
-                    
+
                     height: 100%;
                     width: 100%;
                     @include m.title-font;
@@ -70,14 +67,14 @@
                     line-height: 1.1;
                     margin-bottom: v.$spacing-8;
                     display: block;
-            
+
                     &__span {
                         // display: inline-block;
                         gap: v.$spacing-3;
                     }
-            
+
                     .line-break {
-            
+
                         @media screen and (max-width: v.$screen-2xl) {
                             display: none;
                         }
@@ -97,11 +94,11 @@
 
                 // background-color: blue;
 
-                .last-words{
+                .last-words {
                     color: v.$text-primary;
                     font-size: v.$font-size-lg;
 
-                    a{
+                    a {
                         text-decoration: none;
                         // display: flex;
                         align-items: center;
@@ -111,18 +108,13 @@
                         color: v.$text-primary;
                         transition: all 0.3s ease;
 
-                        &:hover{
+                        &:hover {
                             color: v.$text-hover;
                         }
-                        
-                    }
 
-                    &__icon{
-                        // font-size: v.$font-size-xl;
                     }
-
                 }
-                
+
                 @media screen and (max-width: v.$screen-lg) {
                     text-align: left;
                     width: 100%;
@@ -133,19 +125,20 @@
 
 
     &__content {
-        // @include m.flex-center;
+        @include m.flex-center;
+        height: 100%;
+        width: 100%;
+
+        @media screen and (max-width: v.$screen-lg) {
+            overflow-x: scroll;
+            justify-content: start;
+            align-items: start;
+        }
 
         &__item {
             @include m.flex-center;
             flex-direction: row;
             gap: v.$spacing-2;
-            overflow-x: scroll;
-            // overscroll-behavior-x: contain;
-            // scroll-behavior: smooth;
-            // white-space: wrap;
-            // scroll-snap-type: x mandatory;
-
-            // @include m.scroll-x-axis;
 
             &__card {
                 @include m.flex-center;
@@ -153,7 +146,6 @@
                 gap: v.$spacing-12;
                 border: 1px solid v.$border-primary;
                 border-radius: v.$spacing-4;
-                // scroll-snap-align: start;
                 overflow: hidden;
                 background-color: v.$card-bg;
                 height: 350px;
@@ -201,11 +193,6 @@
                         @include m.flex-center;
                     }
                 }
-            }
-
-            @media screen and (max-width: v.$screen-lg) {
-                // flex-direction: column;
-                margin-left: 1rem;
             }
         }
     }
