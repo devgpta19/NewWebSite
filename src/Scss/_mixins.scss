@@ -21,7 +21,7 @@
 @mixin title-font {
     font-family: v.$font-interVariable;
     color: v.$text-primary;
-    font-weight: v.$font-weight-semi-bold;
+    font-weight: v.$font-weight-medium;
     font-size: v.$font-size-5xl;
     // font-size: clamp(v.$font-size-5xl, 3vw, v.$font-size-8xl);
     //               3vw (which is 3% of the viewport width)
@@ -72,7 +72,7 @@
 
 @mixin btn_primary {
     font-family: v.$font-interVariable;
-    background-color: v.$text-primary;
+    background-color: v.$btn-primary;
     color: v.$bg-primary;
     font-size: v.$font-size-sm;
     font-weight: v.$font-weight-medium;
@@ -98,6 +98,7 @@
     min-height: 100%;
     width: 100%;
     padding: v.$spacing-36 v.$spacing-10;
+
     @media screen and (max-width: v.$screen-md) {
         padding: v.$spacing-20 v.$spacing-4;
     }
@@ -107,11 +108,12 @@
     @include flex-center;
     width: 1000px;
     background-color: red;
-    &__child{
-    height: 550px;
-    width: 50%;
-    border: 1px solid v.$border-primary;
-    // background-color: v.$border-primary;
-    margin: v.$spacing-12 0;
+
+    &__child {
+        height: 550px;
+        width: 50%;
+        border: 1px solid v.$border-primary;
+        // background-color: v.$border-primary;
+        margin: v.$spacing-12 0;
     }
 }

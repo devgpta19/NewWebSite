@@ -8,12 +8,14 @@ $card-bg: #141516;
 
 $text-primary: #f7f8f8;
 $text-hover: #ffffff;
-$text-secondary: #8c8c8c;
+$text-secondary: #8a8f98;
 $text-tertiary: #7e838b;
 
 $border-primary: #1c1d1d;
 $border-secondary: #333333;
 $border-tertiary: #787878;
+
+$btn-primary: #e6e6e6;
 
 $accent-green: #68cc58;
 
@@ -36,7 +38,7 @@ $font-interVariable: InterVariable;
 $font-mono: 'SF Mono', Monaco, 'Cascadia Code', monospace;
 
 $font-size-xxs: 0.625rem;  // 10px ≈ 0.52vw
-$font-size-xs:  0.75rem;   // 12px ≈ 0.63vw
+$font-size-xs:  0.813rem;  // 13px ≈ 0.63vw
 $font-size-sm:  0.875rem;  // 14px ≈ 0.73vw
 $font-size-base: 1rem;     // 16px ≈ 0.83vw (default body)
 $font-size-md:  1.125rem;  // 18px ≈ 0.94vw
@@ -45,7 +47,7 @@ $font-size-xl:  1.5rem;    // 24px ≈ 1.25vw
 $font-size-2xl: 1.75rem;   // 28px ≈ 1.46vw
 $font-size-3xl: 2rem;      // 32px ≈ 1.67vw
 $font-size-4xl: 2.5rem;    // 40px ≈ 2.08vw
-$font-size-5xl: 3rem;      // 48px ≈ 2.50vw
+$font-size-5xl: 3.5rem;    // 56px ≈ 
 $font-size-6xl: 3.75rem;   // 60px ≈ 3.13vw
 $font-size-7xl: 4.5rem;    // 72px ≈ 3.75vw
 $font-size-8xl: 6rem;      // 96px ≈ 5.00vw

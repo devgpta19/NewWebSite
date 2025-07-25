@@ -10,7 +10,7 @@ const Hero1: React.FC = () => {
             <div className='hero1__container'>
                 <div className='hero1__content'>
                     <div className='hero1__content__container'>
-                        <h1 className='hero1__title1'>
+                        <p className='hero1__title1'>
                             <span className='hero1__title__span'>Every </span>
                             <span className='hero1__title__span'>trade </span>
                             <span className='hero1__title__span'>teaches </span>
@@ -24,7 +24,7 @@ const Hero1: React.FC = () => {
                             <span className='hero1__title__span'>you </span>
                             <span className='hero1__title__span'>learn </span>
                             <span className='hero1__title__span'>it.</span>
-                        </h1>
+                        </p>
                         <h1 className='hero1__title2'>
                             {/* Tradylytics is the system for modern traders. */}
                             {/* Tradylytics empowers modern traders with intelligent insights. */}

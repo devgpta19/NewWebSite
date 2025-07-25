@@ -40,8 +40,9 @@
 
     &__title1 {
         @include m.title-font;
-        letter-spacing: -0.025em;
+        letter-spacing: -0.0325em;
         line-height: 1.1;
+        // font-variation-settings: "wght" 300;
         margin-bottom: v.$spacing-8;
         display: block;
 

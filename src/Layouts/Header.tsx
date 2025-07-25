@@ -4,6 +4,12 @@ import './Header.scss';
 const Header: React.FC = () => {
 
     const [isMobile, setIsMobile] = useState(false);
+    const [isToggleTheme, setIsToggleTheme] = useState(false);
+
+    const toggleTheme = () => {
+        setIsToggleTheme(!isToggleTheme);
+        console.log(isToggleTheme);
+    }
 
     return (
         <header className='header'>
@@ -23,6 +29,9 @@ const Header: React.FC = () => {
                     <a href="#" className="nav-link">Customers</a>
                     <a href="#" className="nav-link">Blog</a>
                     <a href="#" className="nav-link">Contact</a>
+                    <button className="theme-toggle" onClick={toggleTheme}>
+                        {isToggleTheme ? <span className="theme-toggle__icon moon">🌙</span> : <span className="theme-toggle__icon sun">🌞</span>}
+                    </button>
                 </nav>
 
                 <div className='header__container__actions'>

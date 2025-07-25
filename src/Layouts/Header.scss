@@ -20,22 +20,27 @@
     font-weight: v.$font-weight-medium;
     @include m.flex-center;
     padding: 0 v.$spacing-10;
+
     @media screen and (max-width:v.$screen-lg) {
         padding: 0 v.$spacing-1;
     }
+
     &__container {
         height: 100%;
         width: 1000px;
         @include m.flex-center;
         justify-content: space-between;
         color: v.$text-primary;
+
         @media screen and (max-width:v.$screen-lg) {
             width: 100%;
         }
+
         &__logo {
             &__content {
                 @include m.flex-center;
                 gap: v.$spacing-3;
+
                 &__logoicon {
                     width: 25px;
                     height: 25px;
@@ -44,9 +49,11 @@
                 }
             }
         }
+
         &__nav {
             @include m.flex-center;
             gap: v.$spacing-3;
+
             @media screen and (max-width: v.$screen-lg) {
                 position: fixed;
                 top: 100%;
@@ -61,6 +68,7 @@
                 opacity: 0;
                 visibility: hidden;
                 transition: all 0.3s ease;
+
                 &--mobile {
                     transform: translateY(0);
                     opacity: 1;
@@ -72,9 +80,12 @@
                     gap: v.$spacing-6;
                 }
             }
+
             .nav-link {
                 @include m.btn_ghost;
                 text-decoration: none;
+                font-size: v.$font-size-xs;
+
                 @media screen and (max-width: v.$screen-lg) {
                     display: flex;
                     justify-content: center;
@@ -89,7 +100,22 @@
                     font-size: v.$font-size-xl;
                 }
             }
+
+            .theme-toggle {
+                @include m.btn_ghost;
+                border: none;
+                background: none;
+                padding: 0 v.$spacing-1;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: auto;
+            }
+
+
         }
+
         &__actions {
             @media screen and (max-width: v.$screen-lg) {
                 display: flex;
@@ -98,21 +124,27 @@
                 justify-content: end;
                 align-items: center;
             }
+
             &__btns {
                 @include m.flex-center;
                 gap: v.$spacing-1;
+
                 .btn {
                     @include m.common_button;
+
                     &__ghost {
                         @include m.btn_ghost;
                     }
+
                     &__primary {
                         @include m.btn_primary;
                     }
                 }
             }
+
             .mobile-menu-btn {
                 display: none;
+
                 @media screen and (max-width: v.$screen-lg) {
                     display: flex;
                     flex-direction: column;
@@ -123,24 +155,28 @@
                     padding: 0.5rem;
                     border-radius: 0.25rem;
                     transition: background 0.2s ease;
+
                     &:hover {
                         @include m.btn_ghost;
                         color: v.$text-primary;
                         padding: v.$spacing-3 v.$spacing-3;
                     }
                 }
+
                 span {
                     width: 20px;
                     height: 2px;
                     background: v.$text-primary;
                     transition: all 0.3s ease;
                 }
+
                 &.active {
                     span:nth-child(1) {
-                        transform: rotate(45deg) translate(5px, 3px);
+                        transform: rotate(45deg) translate(5px, 0px);
                     }
+
                     span:nth-child(2) {
-                        transform: rotate(-45deg) translate(5px, -3px);
+                        transform: rotate(-45deg) translate(5px, 0px);
                     }
                 }
             }
